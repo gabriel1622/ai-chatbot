@@ -1,3 +1,0 @@
-This document contains Gaber's secret AI tools and philosophy.
-It includes Python, Flask, and unstoppable terminal energy.
-^Z
