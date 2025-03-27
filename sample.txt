@@ -1,0 +1,19 @@
+This PDF explains the tools and mission of Gaber's AI empire.
+copy con sample.txt
+This PDF explains the tools and mission of Gaber's AI empire.
+
+Tools:
+- Python
+- Flask
+- OpenAI API
+
+Philosophy:
+- Build fast
+- Learn constantly
+- Use the terminal like a Top G
+
+Mission:
+- Empower creators to build with AI and unlock their full potential.
+^Z
+
+
