@@ -1,1 +1,67 @@
-  
+<!DOCTYPE html>
+copy con templates\index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GaberGPT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 30px;
+    }
+    h1 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"], input[type="file"] {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .response-box {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>GaberGPT ??</h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="pdf_file" required><br>
+    <input type="text" name="user_input" placeholder="Ask a question..." required><br>
+    <button type="submit">Send</button>
+  </form>
+
+  {% if response %}
+    <div class="response-box">
+      <strong>AI:</strong> {{ response }}
+    </div>
+  {% endif %}
+</body>
+</html>
