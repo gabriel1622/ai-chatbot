@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+S<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +36,17 @@
         <h2>AI:</h2>
         <p>{{ response }}</p>
     {% endif %}
+<script>
+    function speak(text) {
+        const synth = window.speechSynthesis;
+        const utter = new SpeechSynthesisUtterance(text);
+        synth.speak(utter);
+    }
+
+    {% if response %}
+        window.onload = () => speak("{{ response | e }}");
+    {% endif %}
+</script>
 </body>
 </html>
 copy con templates\index.html
