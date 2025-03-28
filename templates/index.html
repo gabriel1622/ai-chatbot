@@ -1,23 +1,36 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>GaberGPT AI Chatbot</title>
+    <script>
+        function startListening() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+            recognition.start();
+            recognition.onresult = function(event) {
+                document.querySelector("input[name='user_input']").value = event.results[0][0].transcript;
+            };
+        }
+    </script>
 </head>
 <body>
     <h1>Welcome to GaberGPT</h1>
 
-    <!-- Upload Form -->
+    <!-- PDF Upload -->
     <form method="POST" enctype="multipart/form-data">
         <input type="file" name="pdf_file" accept="application/pdf" />
         <button type="submit">Upload PDF</button>
     </form>
 
-    <!-- Question Form (NO file input here) -->
+    <!-- Ask a Question -->
     <form method="POST">
-        <input type="text" name="user_input" placeholder="Ask a question..." required />
+        <input type="text" name="user_input" placeholder="Ask a question..." />
         <button type="submit">Send</button>
+        <button type="button" onclick="startListening()">?? Voice</button>
     </form>
 
+    <!-- Response -->
     {% if response %}
         <h2>AI:</h2>
         <p>{{ response }}</p>
