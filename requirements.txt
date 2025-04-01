@@ -4,3 +4,4 @@ python-dotenv
 PyPDF2
 gunicorn
 sentence-transformers 
+faiss-cpu 
